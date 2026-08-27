@@ -568,6 +568,7 @@
 <!-- JAVASCRIPT -->
 
 <script>
+    // Отслеживание событий для Google Ads / Meta Pixel
     function trackConversion(eventName) {
         if (typeof gtag === 'function') {
             gtag('event', 'conversion', {'send_to': eventName});
@@ -577,6 +578,7 @@
         }
     }
 
+    // Отправка формы в WhatsApp
     function sendWhatsApp() {
         const name = document.getElementById("name").value.trim();
         const service = document.getElementById("service").value.trim();
@@ -593,17 +595,36 @@
         window.open("https://wa.me/" + phone + "?text=" + text, "_blank");
     }
 
+    // POPUP LOGIC
     let popupShown = false;
-    document.addEventListener("mouseleave", function (e) {
-        if (e.clientY < 0 && !popupShown) {
+
+    function showPopup() {
+        if (!popupShown) {
             document.getElementById("exitPopup").style.display = "flex";
             popupShown = true;
         }
-    });
+    }
 
     function closePopup() {
         document.getElementById("exitPopup").style.display = "none";
     }
+
+    // 1. Для ПК: срабатывает при уходе курсора вверх
+    document.addEventListener("mouseleave", function (e) {
+        if (e.clientY < 0) {
+            showPopup();
+        }
+    });
+
+    // 2. Для мобильных (и ПК): срабатывает при прокрутке страницы на 50%
+    window.addEventListener("scroll", function () {
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const pageHeight = document.documentElement.scrollHeight;
+
+        if (scrollPosition / pageHeight >= 0.5) {
+            showPopup();
+        }
+    });
 </script>
 
 </body>
