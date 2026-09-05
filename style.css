@@ -498,3 +498,40 @@ footer {
         gap: 20px;
     }
 }
+/* КНОПКИ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ */
+.lang-switch {
+    display: flex;
+    gap: 4px;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+.lang-btn {
+    border: none;
+    background: transparent;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    color: #0f172a;
+}
+
+.lang-btn.active {
+    background: #ffffff;
+    color: #25D366;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .lang-switch {
+        margin: 10px 0;
+    }
+}
