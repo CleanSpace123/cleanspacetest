@@ -11,29 +11,34 @@
 
 <body>
 
-<header>
-    <div class="logo">CleanSpace</div>
+<header class="site-header">
+    <div class="header-container">
+        <!-- ЛОГОТИП -->
+        <a href="#" class="logo">CleanSpace</a>
 
-    <nav>
-        <a href="#" data-i18n="nav_home">Strona główna</a>
-        <a href="#services" data-i18n="nav_services">Usługi</a>
-        <a href="#pricing" data-i18n="nav_pricing">Cennik</a>
-        <a href="#contact" data-i18n="nav_contact">Kontakt</a>
-    </nav>
+        <!-- НАВИГАЦИЯ (ПК) -->
+        <nav class="nav-menu">
+            <a href="#" data-i18n="nav_home">Strona główna</a>
+            <a href="#services" data-i18n="nav_services">Usługi</a>
+            <a href="#pricing" data-i18n="nav_pricing">Cennik</a>
+            <a href="#contact" data-i18n="nav_contact">Kontakt</a>
+        </nav>
 
-    <!-- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ -->
-    <div class="lang-switch">
-        <button onclick="setLanguage('pl')" class="lang-btn active">PL</button>
-        <button onclick="setLanguage('uk')" class="lang-btn">UA</button>
-        <button onclick="setLanguage('ru')" class="lang-btn">RU</button>
-        <button onclick="setLanguage('en')" class="lang-btn">EN</button>
-    </div>
+        <!-- ЯЗЫКИ И ТЕЛЕФОН -->
+        <div class="header-actions">
+            <div class="lang-switch">
+                <button onclick="setLanguage('pl')" class="lang-btn active">PL</button>
+                <button onclick="setLanguage('uk')" class="lang-btn">UA</button>
+                <button onclick="setLanguage('ru')" class="lang-btn">RU</button>
+                <button onclick="setLanguage('en')" class="lang-btn">EN</button>
+            </div>
 
-    <div class="header-phone">
-        <a href="tel:+48731231576" onclick="trackConversion('PhoneCall')">📞 +48 731 231 576</a>
+            <a href="tel:+48731231576" class="header-phone" onclick="trackConversion('PhoneCall')">
+                📞 <span>+48 731 231 576</span>
+            </a>
+        </div>
     </div>
 </header>
-
 
 <main>
 
@@ -203,7 +208,7 @@
 
 </main>
 
-<!-- EXIT INTENT POPUP -->
+<!-- POPUP -->
 <div id="exitPopup" class="popup">
     <div class="popup-content">
         <span class="close-btn" onclick="closePopup()">&times;</span>
@@ -245,239 +250,90 @@
     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 </a>
 
-<!-- JAVASCRIPT И ЛOГИКА ПЕРЕВОДОВ -->
 <script>
     const translations = {
         pl: {
-            nav_home: "Strona główna",
-            nav_services: "Usługi",
-            nav_pricing: "Cennik",
-            nav_contact: "Kontakt",
-            hero_small: "CZYSZCZENIE TAPICERKI W SZCZECINIE",
-            hero_title: "Twoja tapicerka<br><span>jak nowa.</span>",
-            hero_desc: "Profesjonalne czyszczenie kanap, foteli, materacy, dywanów oraz tapicerki samochodowej.",
-            btn_whatsapp: "Napisz na WhatsApp",
-            point_1: "✓ Dojazd do klienta",
-            point_2: "✓ Bezpieczna chemia (Dzieci i Zwierzęta)",
-            point_3: "✓ Szybka wycena w 5 min",
-            guarantee1_title: "🛡️ Gwarancja Jakości",
-            guarantee1_desc: "Nie jesteś zadowolony z efektu? Nie płacisz za usługę.",
-            guarantee2_title: "🌿 100% Bezpieczeństwa",
-            guarantee2_desc: "Używamy certyfikowanych środków bezpiecznych dla dzieci i zwierząt.",
-            services_tag: "CO OFERUJEMY",
-            services_title: "Nasze usługi",
-            service1_title: "Kanapy i sofy",
-            service1_desc: "Profesjonalne pranie i usuwanie zabrudzeń z tapicerki meblowej.",
-            service2_title: "Materace",
-            service2_desc: "Dokładne czyszczenie materacy i usuwanie plam oraz nieprzyjemnych zapachów.",
-            service3_title: "Dywany",
-            service3_desc: "Skuteczne pranie dywanów z wykorzystaniem profesjonalnego sprzętu.",
-            service4_title: "Tapicerka samochodowa",
-            service4_desc: "Czyszczenie foteli, kanapy, boczków oraz innych elementów wnętrza auta.",
-            pricing_tag: "PROSTE CENY",
-            pricing_title: "Cennik",
-            price1_title: "Kanapa",
-            price1_val: "od 120 zł",
-            price1_desc: "Profesjonalne czyszczenie kanapy.",
-            popular_tag: "NAJCZĘŚCIEJ WYBIERANE",
-            price2_title: "Kanapa + fotele",
-            price2_val: "od 180 zł",
-            price2_desc: "Kompleksowe czyszczenie zestawu.",
-            price3_title: "Materac",
-            price3_val: "od 100 zł",
-            price3_desc: "Dokładne czyszczenie materaca.",
-            gallery_tag: "NASZE REALIZACJE",
-            gallery_title: "Zobacz nasze realizacje",
-            reviews_tag: "OPINIE KLIENTÓW",
-            reviews_title: "Co mówią nasi klienci?",
-            rev1_text: "Bardzo dokładne czyszczenie. Kanapa wygląda jak nowa. Polecam!",
-            rev2_text: "Szybka realizacja, miła obsługa i świetny efekt. Na pewno skorzystam ponownie.",
-            rev3_text: "Profesjonalne podejście i bardzo dobry kontakt. Materac został dokładnie wyczyszczony.",
-            contact_tag: "SKONTAKTUJ SIĘ",
-            contact_title: "Masz pytania?",
-            contact_desc: "Napisz do nas na WhatsApp i otrzymaj szybką wycenę usługi.",
-            contact_hours: "⏰ Pon–Sob: 8:00–20:00",
-            ph_name: "Imię",
-            ph_service: "Jakiej usługi potrzebujesz?",
-            ph_msg: "Dodatkowa wiadomość",
-            btn_send: "Wyślij wiadomość",
-            popup_title: "Otrzymaj -10% rabatu!",
-            popup_desc: "Wyślij zdjęcie tapicerki teraz i zgarnij zniżkę na pierwsze czyszczenie.",
-            popup_btn: "Odebież rabat na WhatsApp",
+            nav_home: "Strona główna", nav_services: "Usługi", nav_pricing: "Cennik", nav_contact: "Kontakt",
+            hero_small: "CZYSZCZENIE TAPICERKI W SZCZECINIE", hero_title: "Twoja tapicerka<br><span>jak nowa.</span>", hero_desc: "Profesjonalne czyszczenie kanap, foteli, materacy, dywanów oraz tapicerki samochodowej.",
+            btn_whatsapp: "Napisz na WhatsApp", point_1: "✓ Dojazd do klienta", point_2: "✓ Bezpieczna chemia (Dzieci i Zwierzęta)", point_3: "✓ Szybka wycena w 5 min",
+            guarantee1_title: "🛡️ Gwarancja Jakości", guarantee1_desc: "Nie jesteś zadowolony z efektu? Nie płacisz za usługę.",
+            guarantee2_title: "🌿 100% Bezpieczeństwa", guarantee2_desc: "Używamy certyfikowanych środków bezpiecznych dla dzieci i zwierząt.",
+            services_tag: "CO OFERUJEMY", services_title: "Nasze usługi", service1_title: "Kanapy i sofy", service1_desc: "Profesjonalne pranie i usuwanie zabrudzeń z tapicerki meblowej.",
+            service2_title: "Materace", service2_desc: "Dokładne czyszczenie materacy i usuwanie plam oraz nieprzyjemnych zapachów.",
+            service3_title: "Dywany", service3_desc: "Skuteczne pranie dywanów z wykorzystaniem profesjonalnego sprzętu.",
+            service4_title: "Tapicerka samochodowa", service4_desc: "Czyszczenie foteli, kanapy, boczków oraz innych elementów wnętrza auta.",
+            pricing_tag: "PROSTE CENY", pricing_title: "Cennik", price1_title: "Kanapa", price1_val: "od 120 zł", price1_desc: "Profesjonalne czyszczenie kanapy.",
+            popular_tag: "NAJCZĘŚCIEJ WYBIERANE", price2_title: "Kanapa + fotele", price2_val: "od 180 zł", price2_desc: "Kompleksowe czyszczenie zestawu.",
+            price3_title: "Materac", price3_val: "od 100 zł", price3_desc: "Dokładne czyszczenie materaca.",
+            gallery_tag: "NASZE REALIZACJE", gallery_title: "Zobacz nasze realizacje",
+            reviews_tag: "OPINIE KLIENTÓW", reviews_title: "Co mówią nasi klienci?", rev1_text: "Bardzo dokładne czyszczenie. Kanapa wygląda jak nowa. Polecam!",
+            rev2_text: "Szybka realizacja, miła obsługa i świetny efekt. Na pewno skorzystam ponownie.", rev3_text: "Profesjonalne podejście i bardzo dobry kontakt. Materac został dokładnie wyczyszczony.",
+            contact_tag: "SKONTAKTUJ SIĘ", contact_title: "Masz pytania?", contact_desc: "Napisz do nas na WhatsApp i otrzymaj szybką wycenę usługi.", contact_hours: "⏰ Pon–Sob: 8:00–20:00",
+            ph_name: "Imię", ph_service: "Jakiej usługi potrzebujesz?", ph_msg: "Dodatkowa wiadomość", btn_send: "Wyślij wiadomość",
+            popup_title: "Otrzymaj -10% rabatu!", popup_desc: "Wyślij zdjęcie tapicerki teraz i zgarnij zniżkę na pierwsze czyszczenie.", popup_btn: "Odebież rabat na WhatsApp",
             footer_desc: "Profesjonalne czyszczenie tapicerki w Szczecinie."
         },
         uk: {
-            nav_home: "Головна",
-            nav_services: "Послуги",
-            nav_pricing: "Ціни",
-            nav_contact: "Контакти",
-            hero_small: "ХІМЧИСТКА М'ЯКИХ МЕБЛІВ У ЩЕЦІНІ",
-            hero_title: "Ваша оббивка<br><span>як нова.</span>",
-            hero_desc: "Професійна хімчистка диванів, крісел, матраців, килимів та автосалону.",
-            btn_whatsapp: "Написати у WhatsApp",
-            point_1: "✓ Виїзд до клієнта",
-            point_2: "✓ Безпечна хімія (Діти та Тварини)",
-            point_3: "✓ Швидка оцінка за 5 хв",
-            guarantee1_title: "🛡️ Гарантія якості",
-            guarantee1_desc: "Не задоволені результатом? Ви не платите за послугу.",
-            guarantee2_title: "🌿 100% Безпека",
-            guarantee2_desc: "Використовуємо сертифіковані засоби, безпечні для дітей та тварин.",
-            services_tag: "ЩО МИ ПРОПОНУЄМО",
-            services_title: "Наші послуги",
-            service1_title: "Дивани та софи",
-            service1_desc: "Професійна чистка та видалення плям з меблевої оббивки.",
-            service2_title: "Матраци",
-            service2_desc: "Ретельна чистка матраців, видалення плям та неприємних запахів.",
-            service3_title: "Килими",
-            service3_desc: "Ефективна чистка килимів за допомогою професійного обладнання.",
-            service4_title: "Автосалон",
-            service4_desc: "Чистка сидінь, карт дверей та інших елементів салону авто.",
-            pricing_tag: "ПРОСТІ ЦІНИ",
-            pricing_title: "Прайс-лист",
-            price1_title: "Диван",
-            price1_val: "від 120 zł",
-            price1_desc: "Професійна чистка дивана.",
-            popular_tag: "НАЙПОПУЛЯРНІШЕ",
-            price2_title: "Диван + крісла",
-            price2_val: "від 180 zł",
-            price2_desc: "Комплексна чистка комплекту.",
-            price3_title: "Матрац",
-            price3_val: "від 100 zł",
-            price3_desc: "Ретельна чистка матраца.",
-            gallery_tag: "НАШІ РОБОТИ",
-            gallery_title: "Подивіться наші роботи",
-            reviews_tag: "ВІДГУКИ КЛІЄНТІВ",
-            reviews_title: "Що кажуть наші клієнти?",
-            rev1_text: "Дуже ретельна чистка. Диван як новий. Рекомендую!",
-            rev2_text: "Швидке виконання, приємне обслуговування та чудовий результат. Обов'язково звернуся ще.",
-            rev3_text: "Професійний підхід і гарний контакт. Матрац почистили дуже якісно.",
-            contact_tag: "ЗВ'ЯЖІТЬСЯ З НАМИ",
-            contact_title: "Є запитання?",
-            contact_desc: "Напишіть нам у WhatsApp та отримайте швидку оцінку вартості.",
-            contact_hours: "⏰ Пн–Сб: 8:00–20:00",
-            ph_name: "Ім'я",
-            ph_service: "Яка послуга вам потрібна?",
-            ph_msg: "Додаткове повідомлення",
-            btn_send: "Надіслати повідомлення",
-            popup_title: "Отримайте знижку -10%!",
-            popup_desc: "Надішліть фото оббивки зараз і отримайте знижку на перше чищення.",
-            popup_btn: "Отримати знижку у WhatsApp",
+            nav_home: "Головна", nav_services: "Послуги", nav_pricing: "Ціни", nav_contact: "Контакти",
+            hero_small: "ХІМЧИСТКА М'ЯКИХ МЕБЛІВ У ЩЕЦІНІ", hero_title: "Ваша оббивка<br><span>як нова.</span>", hero_desc: "Професійна хімчистка диванів, крісел, матраців, килимів та автосалону.",
+            btn_whatsapp: "Написати у WhatsApp", point_1: "✓ Виїзд до клієнта", point_2: "✓ Безпечна хімія (Діти та Тварини)", point_3: "✓ Швидка оцінка за 5 хв",
+            guarantee1_title: "🛡️ Гарантія якості", guarantee1_desc: "Не задоволені результатом? Ви не платите за послугу.",
+            guarantee2_title: "🌿 100% Безпека", guarantee2_desc: "Використовуємо сертифіковані засоби, безпечні для дітей та тварин.",
+            services_tag: "ЩО МИ ПРОПОНУЄМО", services_title: "Наші послуги", service1_title: "Дивани та софи", service1_desc: "Професійна чистка та видалення плям з меблевої оббивки.",
+            service2_title: "Матраци", service2_desc: "Ретельна чистка матраців, видалення плям та неприємних запахів.",
+            service3_title: "Килими", service3_desc: "Ефективна чистка килимів за допомогою професійного обладнання.",
+            service4_title: "Автосалон", service4_desc: "Чистка сидінь, карт дверей та інших елементів салону авто.",
+            pricing_tag: "ПРОСТІ ЦІНИ", pricing_title: "Прайс-лист", price1_title: "Диван", price1_val: "від 120 zł", price1_desc: "Професійна чистка дивана.",
+            popular_tag: "НАЙПОПУЛЯРНІШЕ", price2_title: "Диван + крісла", price2_val: "від 180 zł", price2_desc: "Комплексна чистка комплекту.",
+            price3_title: "Матрац", price3_val: "від 100 zł", price3_desc: "Ретельна чистка матраца.",
+            gallery_tag: "НАШІ РОБОТИ", gallery_title: "Подивіться наші роботи",
+            reviews_tag: "ВІДГУКИ КЛІЄНТІВ", reviews_title: "Що кажуть наші клієнти?", rev1_text: "Дуже ретельна чистка. Диван як новий. Рекомендую!",
+            rev2_text: "Швидке виконання, приємне обслуговування та чудовий результат. Обов'язково звернуся ще.", rev3_text: "Професійний підхід і гарний контакт. Матрац почистили дуже якісно.",
+            contact_tag: "ЗВ'ЯЖІТЬСЯ З НАМИ", contact_title: "Є запитання?", contact_desc: "Напишіть нам у WhatsApp та отримайте швидку оцінку вартості.", contact_hours: "⏰ Пн–Сб: 8:00–20:00",
+            ph_name: "Ім'я", ph_service: "Яка послуга вам потрібна?", ph_msg: "Додаткове повідомлення", btn_send: "Надіслати повідомлення",
+            popup_title: "Отримайте знижку -10%!", popup_desc: "Надішліть фото оббивки зараз і отримайте знижку на перше чищення.", popup_btn: "Отримати знижку у WhatsApp",
             footer_desc: "Професійна хімчистка оббивки у Щеціні."
         },
         ru: {
-            nav_home: "Главная",
-            nav_services: "Услуги",
-            nav_pricing: "Цены",
-            nav_contact: "Контакты",
-            hero_small: "ХИМЧИСТКА МЕБЕЛИ В ЩЕЦИНЕ",
-            hero_title: "Ваша обивка<br><span>как новая.</span>",
-            hero_desc: "Профессиональная чистка диванов, кресел, матрасов, ковров и автосалона.",
-            btn_whatsapp: "Написать в WhatsApp",
-            point_1: "✓ Выезд к клиенту",
-            point_2: "✓ Безопасная химия (Дети и Животные)",
-            point_3: "✓ Быстрая оценка за 5 мин",
-            guarantee1_title: "🛡️ Гарантия качества",
-            guarantee1_desc: "Не довольны результатом? Вы не платите за услугу.",
-            guarantee2_title: "🌿 100% Безопасность",
-            guarantee2_desc: "Используем сертифицированные средства, безопасные для детей и животных.",
-            services_tag: "ЧТО МЫ ПРЕДЛАГАЕМ",
-            services_title: "Наши услуги",
-            service1_title: "Диваны и софы",
-            service1_desc: "Профессиональная чистка и удаление пятен с мебельной обивки.",
-            service2_title: "Матрасы",
-            service2_desc: "Тщательная чистка матрасов, удаление пятен и неприятных запахов.",
-            service3_title: "Ковры",
-            service3_desc: "Эффективная чистка ковров с использованием профессионального оборудования.",
-            service4_title: "Салон авто",
-            service4_desc: "Чистка сидений, дверных карт и других элементов салона авто.",
-            pricing_tag: "ПРОСТЫЕ ЦЕНЫ",
-            pricing_title: "Прайс-лист",
-            price1_title: "Диван",
-            price1_val: "от 120 zł",
-            price1_desc: "Профессиональная чистка дивана.",
-            popular_tag: "ПОПУЛЯРНЫЙ ВЫБОР",
-            price2_title: "Диван + кресла",
-            price2_val: "от 180 zł",
-            price2_desc: "Комплексная чистка комплекта.",
-            price3_title: "Матрас",
-            price3_val: "от 100 zł",
-            price3_desc: "Тщательная чистка матраса.",
-            gallery_tag: "НАШИ РАБОТЫ",
-            gallery_title: "Посмотрите наши работы",
-            reviews_tag: "ОТЗЫВЫ КЛИЕНТОВ",
-            reviews_title: "Что говорят наши клиенты?",
-            rev1_text: "Очень тщательная чистка. Диван выглядит как новый. Рекомендую!",
-            rev2_text: "Быстрое выполнение, приятный сервис и отличный результат. Обязательно обращусь снова.",
-            rev3_text: "Профессиональный подход и отличный контакт. Матрас вычистили очень качественно.",
-            contact_tag: "СВЯЖИТЕСЬ С НАМИ",
-            contact_title: "Есть вопросы?",
-            contact_desc: "Напишите нам в WhatsApp и получите быструю оценку стоимости.",
-            contact_hours: "⏰ Пн–Сб: 8:00–20:00",
-            ph_name: "Имя",
-            ph_service: "Какая услуга вам нужна?",
-            ph_msg: "Дополнительное сообщение",
-            btn_send: "Отправить сообщение",
-            popup_title: "Получите скидку -10%!",
-            popup_desc: "Отправьте фото обивки прямо сейчас и получите скидку на первую чистку.",
-            popup_btn: "Получить скидку в WhatsApp",
+            nav_home: "Главная", nav_services: "Услуги", nav_pricing: "Цены", nav_contact: "Контакты",
+            hero_small: "ХИМЧИСТКА МЕБЕЛИ В ЩЕЦИНЕ", hero_title: "Ваша обивка<br><span>как новая.</span>", hero_desc: "Профессиональная чистка диванов, кресел, матрасов, ковров и автосалона.",
+            btn_whatsapp: "Написать в WhatsApp", point_1: "✓ Выезд к клиенту", point_2: "✓ Безопасная химия (Дети и Животные)", point_3: "✓ Быстрая оценка за 5 мин",
+            guarantee1_title: "🛡️ Гарантия качества", guarantee1_desc: "Не довольны результатом? Вы не платите за услугу.",
+            guarantee2_title: "🌿 100% Безопасность", guarantee2_desc: "Используем сертифицированные средства, безопасные для детей и животных.",
+            services_tag: "ЧТО МЫ ПРЕДЛАГАЕМ", services_title: "Наши услуги", service1_title: "Диваны и софы", service1_desc: "Профессиональная чистка и удаление пятен с мебельной обивки.",
+            service2_title: "Матрасы", service2_desc: "Тщательная чистка матрасов, удаление пятен и неприятных запахов.",
+            service3_title: "Ковры", service3_desc: "Эффективная чистка ковров с использованием профессионального оборудования.",
+            service4_title: "Салон авто", service4_desc: "Чистка сидений, дверных карт и других элементов салона авто.",
+            pricing_tag: "ПРОСТЫЕ ЦЕНЫ", pricing_title: "Прайс-лист", price1_title: "Диван", price1_val: "от 120 zł", price1_desc: "Профессиональная чистка дивана.",
+            popular_tag: "ПОПУЛЯРНЫЙ ВЫБОР", price2_title: "Диван + кресла", price2_val: "от 180 zł", price2_desc: "Комплексная чистка комплекта.",
+            price3_title: "Матрас", price3_val: "от 100 zł", price3_desc: "Тщательная чистка матраса.",
+            gallery_tag: "НАШИ РАБОТЫ", gallery_title: "Посмотрите наши работы",
+            reviews_tag: "ОТЗЫВЫ КЛИЕНТОВ", reviews_title: "Что говорят наши клиенты?", rev1_text: "Очень тщательная чистка. Диван выглядит как новый. Рекомендую!",
+            rev2_text: "Быстрое выполнение, приятный сервис и отличный результат. Обязательно обращусь снова.", rev3_text: "Профессиональный подход и отличный контакт. Матрас вычистили очень качественно.",
+            contact_tag: "СВЯЖИТЕСЬ С НАМИ", contact_title: "Есть вопросы?", contact_desc: "Напишите нам в WhatsApp и получите быструю оценку стоимости.", contact_hours: "⏰ Пн–Сб: 8:00–20:00",
+            ph_name: "Имя", ph_service: "Какая услуга вам нужна?", ph_msg: "Дополнительное сообщение", btn_send: "Отправить сообщение",
+            popup_title: "Получите скидку -10%!", popup_desc: "Отправьте фото обивки прямо сейчас и получите скидку на первую чистку.", popup_btn: "Получить скидку в WhatsApp",
             footer_desc: "Профессиональная химчистка обивки в Щецине."
         },
         en: {
-            nav_home: "Home",
-            nav_services: "Services",
-            nav_pricing: "Pricing",
-            nav_contact: "Contact",
-            hero_small: "UPHOLSTERY CLEANING IN SZCZECIN",
-            hero_title: "Your upholstery<br><span>like new.</span>",
-            hero_desc: "Professional cleaning of sofas, armchairs, mattresses, carpets, and car interiors.",
-            btn_whatsapp: "Message on WhatsApp",
-            point_1: "✓ Mobile service to your place",
-            point_2: "✓ Safe chemicals (Kids & Pets)",
-            point_3: "✓ Fast quote in 5 min",
-            guarantee1_title: "🛡️ Quality Guarantee",
-            guarantee1_desc: "Not satisfied with the result? You don't pay.",
-            guarantee2_title: "🌿 100% Safe",
-            guarantee2_desc: "We use certified eco-friendly chemicals safe for children and pets.",
-            services_tag: "WHAT WE OFFER",
-            services_title: "Our Services",
-            service1_title: "Sofas & Couches",
-            service1_desc: "Professional deep cleaning and stain removal for furniture upholstery.",
-            service2_title: "Mattresses",
-            service2_desc: "Thorough cleaning of mattresses, removing stains and unpleasant odors.",
-            service3_title: "Carpets",
-            service3_desc: "Effective carpet washing using professional extraction equipment.",
-            service4_title: "Car Upholstery",
-            service4_desc: "Cleaning seats, side panels, and other car interior elements.",
-            pricing_tag: "SIMPLE PRICING",
-            pricing_title: "Prices",
-            price1_title: "Sofa",
-            price1_val: "from 120 zł",
-            price1_desc: "Professional sofa cleaning.",
-            popular_tag: "MOST POPULAR",
-            price2_title: "Sofa + Armchairs",
-            price2_val: "from 180 zł",
-            price2_desc: "Comprehensive set cleaning.",
-            price3_title: "Mattress",
-            price3_val: "from 100 zł",
-            price3_desc: "Thorough mattress cleaning.",
-            gallery_tag: "OUR WORK",
-            gallery_title: "See our latest work",
-            reviews_tag: "TESTIMONIALS",
-            reviews_title: "What our customers say",
-            rev1_text: "Very thorough cleaning. Sofa looks like new. Highly recommend!",
-            rev2_text: "Fast service, friendly staff, and great result. Will definitely use again.",
-            rev3_text: "Professional approach and great contact. The mattress was thoroughly cleaned.",
-            contact_tag: "GET IN TOUCH",
-            contact_title: "Have questions?",
-            contact_desc: "Write to us on WhatsApp to get a quick quote.",
-            contact_hours: "⏰ Mon–Sat: 8:00 AM – 8:00 PM",
-            ph_name: "Name",
-            ph_service: "Which service do you need?",
-            ph_msg: "Additional message",
-            btn_send: "Send message",
-            popup_title: "Get 10% Off!",
-            popup_desc: "Send a picture of your upholstery now and get a discount on your first cleaning.",
-            popup_btn: "Get discount on WhatsApp",
+            nav_home: "Home", nav_services: "Services", nav_pricing: "Pricing", nav_contact: "Contact",
+            hero_small: "UPHOLSTERY CLEANING IN SZCZECIN", hero_title: "Your upholstery<br><span>like new.</span>", hero_desc: "Professional cleaning of sofas, armchairs, mattresses, carpets, and car interiors.",
+            btn_whatsapp: "Message on WhatsApp", point_1: "✓ Mobile service to your place", point_2: "✓ Safe chemicals (Kids & Pets)", point_3: "✓ Fast quote in 5 min",
+            guarantee1_title: "🛡️ Quality Guarantee", guarantee1_desc: "Not satisfied with the result? You don't pay.",
+            guarantee2_title: "🌿 100% Safe", guarantee2_desc: "We use certified eco-friendly chemicals safe for children and pets.",
+            services_tag: "WHAT WE OFFER", services_title: "Our Services", service1_title: "Sofas & Couches", service1_desc: "Professional deep cleaning and stain removal for furniture upholstery.",
+            service2_title: "Mattresses", service2_desc: "Thorough cleaning of mattresses, removing stains and unpleasant odors.",
+            service3_title: "Carpets", service3_desc: "Effective carpet washing using professional extraction equipment.",
+            service4_title: "Car Upholstery", service4_desc: "Cleaning seats, side panels, and other car interior elements.",
+            pricing_tag: "SIMPLE PRICING", pricing_title: "Prices", price1_title: "Sofa", price1_val: "from 120 zł", price1_desc: "Professional sofa cleaning.",
+            popular_tag: "MOST POPULAR", price2_title: "Sofa + Armchairs", price2_val: "from 180 zł", price2_desc: "Comprehensive set cleaning.",
+            price3_title: "Mattress", price3_val: "from 100 zł", price3_desc: "Thorough mattress cleaning.",
+            gallery_tag: "OUR WORK", gallery_title: "See our latest work",
+            reviews_tag: "TESTIMONIALS", reviews_title: "What our customers say", rev1_text: "Very thorough cleaning. Sofa looks like new. Highly recommend!",
+            rev2_text: "Fast service, friendly staff, and great result. Will definitely use again.", rev3_text: "Professional approach and great contact. The mattress was thoroughly cleaned.",
+            contact_tag: "GET IN TOUCH", contact_title: "Have questions?", contact_desc: "Write to us on WhatsApp to get a quick quote.", contact_hours: "⏰ Mon–Sat: 8:00 AM – 8:00 PM",
+            ph_name: "Name", ph_service: "Which service do you need?", ph_msg: "Additional message", btn_send: "Send message",
+            popup_title: "Get 10% Off!", popup_desc: "Send a picture of your upholstery now and get a discount on your first cleaning.", popup_btn: "Get discount on WhatsApp",
             footer_desc: "Professional upholstery cleaning in Szczecin."
         }
     };
@@ -485,22 +341,13 @@
     function setLanguage(lang) {
         document.querySelectorAll("[data-i18n]").forEach(el => {
             const key = el.getAttribute("data-i18n");
-            if (translations[lang] && translations[lang][key]) {
-                el.innerHTML = translations[lang][key];
-            }
+            if (translations[lang] && translations[lang][key]) el.innerHTML = translations[lang][key];
         });
-
         document.querySelectorAll("[data-i18n-ph]").forEach(el => {
             const key = el.getAttribute("data-i18n-ph");
-            if (translations[lang] && translations[lang][key]) {
-                el.placeholder = translations[lang][key];
-            }
+            if (translations[lang] && translations[lang][key]) el.placeholder = translations[lang][key];
         });
-
-        document.querySelectorAll(".lang-btn").forEach(btn => {
-            btn.classList.remove("active");
-        });
-        
+        document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
         const activeBtn = Array.from(document.querySelectorAll(".lang-btn")).find(b => b.getAttribute('onclick').includes(`'${lang}'`));
         if (activeBtn) activeBtn.classList.add("active");
     }
